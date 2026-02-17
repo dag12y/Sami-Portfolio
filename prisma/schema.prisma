@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum VideoSource {
+  uploaded
+  external
+}
+
+enum UserRole {
+  admin
+  editor
+}
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  passwordHash String
+  role         UserRole @default(editor)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  videos       Video[]
+}
+
+model Video {
+  id           String      @id @default(uuid())
+  title        String
+  type         String
+  tools        String
+  videoUrl     String
+  thumbnailUrl String?
+  cloudinaryPublicId String?
+  cloudinaryThumbnailPublicId String?
+  source       VideoSource
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  uploadedById String?
+  uploadedBy   User?       @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
