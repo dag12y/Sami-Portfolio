@@ -18,12 +18,17 @@ const upload = multer({
     fileSize: 300 * 1024 * 1024,
   },
   fileFilter: (_req, file, cb) => {
-    if (file.mimetype.startsWith('video/')) {
+    if (file.fieldname === 'videoFile' && file.mimetype.startsWith('video/')) {
       cb(null, true);
       return;
     }
 
-    cb(new Error('Only video uploads are allowed'));
+    if (file.fieldname === 'thumbnailFile' && file.mimetype.startsWith('image/')) {
+      cb(null, true);
+      return;
+    }
+
+    cb(new Error('Invalid file type. videoFile must be a video and thumbnailFile must be an image.'));
   },
 });
 
@@ -217,7 +222,7 @@ app.post('/api/videos', requireAuth, upload.fields([
   { name: 'thumbnailFile', maxCount: 1 },
 ]), async (req: AuthedRequest, res) => {
   try {
-    const { title, type, tools, videoUrl } = req.body as {
+    const { title, type, tools, videoUrl, thumbnailUrl } = req.body as {
       title?: string;
       type?: string;
       tools?: string;
