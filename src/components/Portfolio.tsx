@@ -56,24 +56,24 @@ function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-white dark:bg-slate-950">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-text-dark mb-4">
+          <h2 className="text-4xl sm:text-5xl font-display font-bold text-text-dark dark:text-slate-100 mb-4">
             My Work
           </h2>
           <div className="w-16 h-1 bg-sage mx-auto rounded-full mb-6"></div>
-          <p className="text-text-dark/70 text-lg max-w-2xl mx-auto">
+          <p className="text-text-dark/70 dark:text-slate-300 text-lg max-w-2xl mx-auto">
             A collection of my recent video editing projects across promotional, tutorial, and self-improvement content.
           </p>
         </div>
 
         {loading ? (
-          <p className="text-center text-text-dark/70">Loading videos...</p>
+          <p className="text-center text-text-dark/70 dark:text-slate-300">Loading videos...</p>
         ) : error ? (
           <p className="text-center text-red-600">{error}</p>
         ) : videos.length === 0 ? (
-          <p className="text-center text-text-dark/70">No videos uploaded yet.</p>
+          <p className="text-center text-text-dark/70 dark:text-slate-300">No videos uploaded yet.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => {
@@ -100,17 +100,17 @@ function Portfolio() {
           onClick={() => setActiveVideo(null)}
         >
           <div
-            className="w-full max-w-5xl bg-white rounded-3xl overflow-hidden shadow-2xl animate-fade-in"
+            className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-2xl animate-fade-in border border-transparent dark:border-slate-700"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-start justify-between px-6 py-4 border-b border-slate-light">
+            <div className="flex items-start justify-between px-6 py-4 border-b border-slate-light dark:border-slate-700">
               <div>
-                <h3 className="text-xl font-display font-bold text-text-dark">{activeVideo.title}</h3>
-                <p className="text-sm text-text-dark/70">{activeVideo.type} | {activeVideo.tools}</p>
+                <h3 className="text-xl font-display font-bold text-text-dark dark:text-slate-100">{activeVideo.title}</h3>
+                <p className="text-sm text-text-dark/70 dark:text-slate-300">{activeVideo.type} | {activeVideo.tools}</p>
               </div>
               <button
                 onClick={() => setActiveVideo(null)}
-                className="rounded-full p-2 text-text-dark/70 hover:text-text-dark hover:bg-slate-light transition-colors"
+                className="rounded-full p-2 text-text-dark/70 dark:text-slate-300 hover:text-text-dark dark:hover:text-slate-100 hover:bg-slate-light dark:hover:bg-slate-700 transition-colors"
                 aria-label="Close video"
               >
                 <X size={20} />

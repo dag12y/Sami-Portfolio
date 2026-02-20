@@ -33,7 +33,7 @@ function Hero() {
   }, [isProfileOpen]);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-cream pt-16">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-cream dark:bg-slate-950 pt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <button
           onClick={() => setIsProfileOpen(true)}
@@ -49,15 +49,15 @@ function Hero() {
           </div>
         </button>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-text-dark mb-6 animate-fade-in">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-text-dark dark:text-slate-100 mb-6 animate-fade-in">
           Hi, I'm <span className="text-sage">Samuel Dires</span>
         </h1>
 
-        <p className="text-2xl sm:text-3xl font-display text-text-dark/80 mb-4">
+        <p className="text-2xl sm:text-3xl font-display text-text-dark/80 dark:text-slate-300 mb-4">
           Professional Video Editor
         </p>
 
-        <p className="text-lg text-text-dark/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-text-dark/70 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           I turn raw footage into polished stories with fast pacing, clean color, and edits designed to hold attention.
         </p>
 
@@ -69,7 +69,7 @@ function Hero() {
         </button>
 
         <div className="mt-20 animate-bounce">
-          <ChevronDown size={32} className="text-taupe/40 mx-auto" />
+          <ChevronDown size={32} className="text-taupe/40 dark:text-slate-500 mx-auto" />
         </div>
       </div>
 
@@ -79,13 +79,13 @@ function Hero() {
           onClick={() => setIsProfileOpen(false)}
         >
           <div
-            className="w-full max-w-md rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-cream to-beige animate-fade-in-up"
+            className="w-full max-w-md rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-cream to-beige dark:from-slate-900 dark:to-slate-800 animate-fade-in-up"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative p-6 border-b border-slate-light">
+            <div className="relative p-6 border-b border-slate-light dark:border-slate-700">
               <button
                 onClick={() => setIsProfileOpen(false)}
-                className="absolute top-4 right-4 rounded-full p-2 text-text-dark/70 hover:text-text-dark hover:bg-white/60 transition-colors"
+                className="absolute top-4 right-4 rounded-full p-2 text-text-dark/70 dark:text-slate-300 hover:text-text-dark dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-700 transition-colors"
                 aria-label="Close profile card"
               >
                 <X size={18} />
@@ -94,16 +94,16 @@ function Hero() {
                 <img src="/profile.jpg" alt="Samuel Dires" className="w-full h-full object-cover" />
               </div>
               <div className="text-center">
-                <p className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full bg-white text-taupe">
+                <p className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full bg-white dark:bg-slate-700 text-taupe dark:text-slate-200">
                   <Sparkles size={14} />
                   Creative Editor
                 </p>
-                <h3 className="mt-3 text-2xl font-display font-bold text-text-dark">Samuel Dires</h3>
-                <p className="text-text-dark/70">Professional Video Editor</p>
+                <h3 className="mt-3 text-2xl font-display font-bold text-text-dark dark:text-slate-100">Samuel Dires</h3>
+                <p className="text-text-dark/70 dark:text-slate-300">Professional Video Editor</p>
               </div>
             </div>
             <div className="p-6 text-center">
-              <p className="text-text-dark/80 leading-relaxed">
+              <p className="text-text-dark/80 dark:text-slate-200 leading-relaxed">
                 I turn raw footage into polished stories with fast pacing, clean color, and edits designed to hold attention.
               </p>
             </div>
