@@ -58,7 +58,7 @@ function Hero() {
         </p>
 
         <p className="text-lg text-text-dark/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-          
+          I turn raw footage into polished stories with fast pacing, clean color, and edits designed to hold attention.
         </p>
 
         <button

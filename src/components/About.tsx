@@ -1,9 +1,28 @@
-import { Video, Palette } from 'lucide-react';
+import {
+  AudioLines,
+  Blend,
+  Captions,
+  Clapperboard,
+  Crop,
+  Gauge,
+  KeyRound,
+  Palette,
+  Sparkles,
+  Wand2,
+} from 'lucide-react';
 
 function About() {
   const skills = [
-    { name: 'CapCut', icon: Video },
-    { name: 'DaVinci Resolve', icon: Palette },
+    { name: 'Video cutting, trimming, and sequencing', icon: Crop },
+    { name: 'Motion graphics and visual effects (VFX)', icon: Sparkles },
+    { name: 'Color correction and cinematic color grading', icon: Palette },
+    { name: 'Audio editing and sound balancing', icon: AudioLines },
+    { name: 'Keyframing and smooth animation', icon: KeyRound },
+    { name: 'Transitions, filters, and text effects', icon: Wand2 },
+    { name: 'Video stabilization and correction', icon: Gauge },
+    { name: 'Subtitles and captions', icon: Captions },
+    { name: 'Storytelling and pacing for engaging visuals', icon: Clapperboard },
+    { name: 'Creative visual design and aesthetic composition', icon: Blend },
   ];
 
   return (
@@ -18,13 +37,20 @@ function About() {
 
         <div className="max-w-3xl mx-auto">
           <p className="text-lg text-text-dark/80 leading-relaxed mb-16 text-center animate-fade-in-up">
-            I am a professional video editor with one year of experience, specializing in short-form promotional, tutorial, and self-improvement content. I create engaging, high-quality edits that capture attention quickly and communicate messages clearly. I also have experience with long-form videos, maintaining strong pacing and storytelling. In addition, I have foundational knowledge of social media marketing, which helps me edit with platform trends, audience behavior, and engagement in mind. My goal is to deliver polished, reliable videos that keep clients satisfied and support long-term brand growth.
+            I&apos;m the person who sees raw footage and thinks, &ldquo;Let&apos;s make this tell a
+            story people can&apos;t look away from.&rdquo; I&apos;m a professional video editor with one year
+            of experience, specializing in short-form promotional, tutorial, and self-improvement
+            content. I bring ideas to life through high-quality, engaging edits that capture
+            attention instantly and communicate messages clearly. I also craft long-form videos
+            with smooth pacing and compelling storytelling. With a strong understanding of social
+            media trends and audience behavior, I shape every project to connect, engage, and
+            leave a lasting impression.
           </p>
 
           <div className="text-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <h3 className="text-2xl font-display font-bold text-text-dark mb-8">My Tools</h3>
+            <h3 className="text-2xl font-display font-bold text-text-dark mb-8">My Skills</h3>
           </div>
-          <div className="grid grid-cols-2 gap-5 max-w-md mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
@@ -46,4 +72,3 @@ function About() {
 }
 
 export default About;
-
