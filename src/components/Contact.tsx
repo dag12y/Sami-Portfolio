@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, Send } from 'lucide-react';
+import { Linkedin, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { submitContactMessage } from '../lib/api';
 
@@ -71,7 +71,22 @@ function Contact() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/samuel-dires/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4jFec5d%2BTKGppkZtaRzt7g%3D%3D"
+                href="https://t.me/ethsami1217"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-text-dark dark:text-slate-100 hover:text-sage transition-colors group"
+              >
+                <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-sage transition-colors shadow-elegant">
+                  <Send className="w-6 h-6 text-taupe group-hover:text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-text-dark dark:text-slate-100">Telegram</p>
+                  <p className="text-sm text-text-dark/60 dark:text-slate-400">@ethsami1217</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/samuel-dires"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-text-dark dark:text-slate-100 hover:text-sage transition-colors group"
@@ -81,22 +96,20 @@ function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-text-dark dark:text-slate-100">LinkedIn</p>
-                  <p className="text-sm text-text-dark/60 dark:text-slate-400">Samuel Dires</p>
+                  <p className="text-sm text-text-dark/60 dark:text-slate-400">samuel-dires</p>
                 </div>
               </a>
 
               <a
-                href="https://instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:0979715388"
                 className="flex items-center gap-4 text-text-dark dark:text-slate-100 hover:text-sage transition-colors group"
               >
                 <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-sage transition-colors shadow-elegant">
-                  <Instagram className="w-6 h-6 text-taupe group-hover:text-white" />
+                  <Phone className="w-6 h-6 text-taupe group-hover:text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-text-dark dark:text-slate-100">Instagram</p>
-                  <p className="text-sm text-text-dark/60 dark:text-slate-400">@yourusername</p>
+                  <p className="font-semibold text-text-dark dark:text-slate-100">Phone</p>
+                  <p className="text-sm text-text-dark/60 dark:text-slate-400">0979715388</p>
                 </div>
               </a>
             </div>
